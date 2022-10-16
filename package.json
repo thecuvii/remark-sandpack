@@ -2,7 +2,11 @@
   "name": "remark-sandpack",
   "version": "0.0.0",
   "description": "Use sandpack in MDX",
-  "keywords": ["remark","sandpack","MDX"],
+  "keywords": [
+    "remark",
+    "sandpack",
+    "MDX"
+  ],
   "homepage": "https://github.com/Xwil/remark-sandpack#readme",
   "bugs": {
     "url": "https://github.com/Xwil/remark-sandpack/issues"
@@ -58,6 +62,10 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "estree-util-value-to-estree": "^2.0.0",
+    "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "@antfu/ni": "^0.18.2",
