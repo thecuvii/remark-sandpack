@@ -43,7 +43,7 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
-    "lint": "eslint .",
+    "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "husky install",
     "prepublishOnly": "nr build",
     "release": "bumpp --commit --push --tag && pnpm publish",
