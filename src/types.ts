@@ -1,4 +1,4 @@
-import { visit } from 'unist-util-visit';
+import type { visit } from 'unist-util-visit';
 
 export interface SandpackFile {
   code: string;

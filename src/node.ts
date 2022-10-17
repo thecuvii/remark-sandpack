@@ -1,14 +1,13 @@
 import { existsSync, readFileSync } from 'fs';
 import { basename, join } from 'path';
 
-import { valueToEstree } from 'estree-util-value-to-estree';
-import { visit } from 'unist-util-visit';
-
 import type { CodeNodeElement, CodeNodeMeta, JsxNodeElement, SandpackFiles, VFile } from './types';
 import { isFilename } from './utils';
 
-export const transformCode = (jsxNode: JsxNodeElement, file: VFile): void => {
+export const transformCode = async (jsxNode: JsxNodeElement, file: VFile): Promise<void> => {
   const files: SandpackFiles = {};
+
+  const visit = await import('unist-util-visit').then((module) => module.visit);
 
   visit(jsxNode, 'code', (codeNode: CodeNodeElement) => {
     const meta = resolveCodeMeta(codeNode);
@@ -33,7 +32,7 @@ export const transformCode = (jsxNode: JsxNodeElement, file: VFile): void => {
     }
   });
 
-  appendProp(jsxNode, 'files', files);
+  await appendProp(jsxNode, 'files', files);
 };
 
 export const resolveCodeMeta = (codeNode: CodeNodeElement): CodeNodeMeta => {
@@ -59,7 +58,9 @@ export const resolveCodeMeta = (codeNode: CodeNodeElement): CodeNodeMeta => {
     }, {});
 };
 
-const appendProp = (node: JsxNodeElement, propName: string, propValue: unknown): void => {
+const appendProp = async (node: JsxNodeElement, propName: string, propValue: unknown): Promise<void> => {
+  const valueToEstree = await import('estree-util-value-to-estree').then((module) => module.valueToEstree);
+
   node.attributes.push({
     type: 'mdxJsxAttribute',
     name: propName,

@@ -1,5 +1,3 @@
-import { visit } from 'unist-util-visit';
-
 import { transformCode } from './node';
 import type { JsxNodeElement, Tree } from './types';
 
@@ -18,11 +16,16 @@ interface Options {
 
 export const transform = (options?: Options) => {
   const componentName = options?.componentName || 'Sandpack';
-  return (tree: Tree, file: VFile): void => {
+  return async (tree: Tree, file: VFile): Promise<void> => {
+    const visit = await import('unist-util-visit').then((module) => module.visit);
+    const promises: Array<() => Promise<void>> = [];
+
     visit(tree, 'mdxJsxFlowElement', (jsxNode: JsxNodeElement) => {
       if (jsxNode.name !== componentName) return;
 
-      transformCode(jsxNode, file);
+      promises.push(async () => transformCode(jsxNode, file));
     });
+
+    await Promise.all(promises.map((p) => p()));
   };
 };

@@ -41,7 +41,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && unbuild",
+    "build": "unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "husky install",
