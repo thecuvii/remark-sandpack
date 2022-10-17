@@ -15,7 +15,7 @@ Maybe different for each MDX plugin you use, check out [examples](#Compatible) b
 
 ### 3. Write your code
 
-````mdx
+````md
 
 import { Sandpack } from '@codesandbox/sandpack-react';
 
@@ -51,7 +51,7 @@ h1{
 
 All props will pass to `Sandpack` directly, except `files`.
 
-````mdx
+````md
 
 <Sandpack
   theme={theme}
@@ -75,7 +75,7 @@ All code blocks inside `<Sandpack></Sandpack>` will be parsed, then be passed as
 
 That means you can define [file property](https://sandpack.codesandbox.io/docs/getting-started/custom-content#advanced-usage) in code block meta.
 
-````
+````md
 
 <Sandpack>
 ```js src/index.js active readOnly
@@ -91,7 +91,7 @@ console.log('I'm hidden')
 
 Code above will transform into:
 
-```
+```tsx
 <Sandpack
   files={{
     "src/index.js": {
@@ -115,8 +115,8 @@ TODO
 
 ## Compatible  
 
-- ✅ next.js with @next/mdx. 👉🏻[example](examples/next-mdx/pages/index.mdx)
-- ✅ next.js with next-remote-mdx. 👉🏻[example](examples/next-mdx-remote/pages/index.tsx)
+- ✅ next.js with @next/mdx. 👉🏻[example](examples/next-mdx)
+- ✅ next.js with next-remote-mdx. 👉🏻[example](examples/next-mdx-remote)
 - ❎ docusaurus
 
 
