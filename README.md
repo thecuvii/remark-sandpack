@@ -122,7 +122,7 @@ Code above will transform into:
 - ✅ gatsby.js . 👉🏻[example](examples/gatsby)
 - ✅ docusaurus.  👉🏻[example](examples/docusaurus)
 
-❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus](https://github.com/pomber/docusaurus-mdx-2)
+❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus-mdx-2](https://github.com/pomber/docusaurus-mdx-2)
 
 
 ## Advance Useage
