@@ -1,6 +1,8 @@
 
-# Write Live Code with Sandpack in MDX 
+# Power MDX with Sandpack
 
+<br/>
+<br/>
 
 ## Usage
 
@@ -11,7 +13,7 @@ npm install remark-sandpack @codesandbox/sandpack-react
 
 ### 2. Register remark plugin
 
-Maybe different for each MDX plugin you use, check out [examples](#Compatible) below.
+It may be different for each MDX plugin you use. Check out [examples](#Compatible) below.
 
 ### 3. Write your code
 
@@ -77,7 +79,7 @@ All props will pass to `Sandpack` directly, except `files`.
 
 2. Code Blocks
 
-All code blocks inside `<Sandpack></Sandpack>` will be parsed, then be passed as `files` prop to  `<Sandpack></Sandpack>`.
+All code blocks contained within `<Sandpack>/Sandpack>` will be parsed and passed to `<Sandpack>/Sandpack>` as file props. 
 
 That means you can define [file property](https://sandpack.codesandbox.io/docs/getting-started/custom-content#advanced-usage) in code block meta.
 
@@ -124,12 +126,14 @@ Code above will transform into:
 
 ❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus-mdx-2](https://github.com/pomber/docusaurus-mdx-2)
 
+---
+<br/>
 
 ## Advance Useage
 
 ### Custom Sandpack component
 
-`remark-sandpack` will parse `<Sandpack></Sandpack>` jsx statement in your MDX files. If your custom sandpack component use different name, such as `SandpackEnhanced`:
+`remark-sandpack` will parse `<Sandpack></Sandpack>` jsx statements in your MDX files. If your custom sandpack component uses a different name, such as `SandpackEnhanced`:
 
 ```js
 // in your mdx config
