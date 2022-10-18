@@ -109,16 +109,14 @@ Code above will transform into:
 ```
 
 
-## How it works
-
-TODO
-
 ## Compatible  
 
 - ✅ next.js with @next/mdx. 👉🏻[example](examples/next-mdx)
 - ✅ next.js with next-remote-mdx. 👉🏻[example](examples/next-mdx-remote)
 - ✅ gatsby.js . 👉🏻[example](examples/gatsby)
-- ❎ docusaurus
+- ✅ docusaurus.  👉🏻[example](examples/docusaurus)
+
+❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus](https://github.com/pomber/docusaurus-mdx-2)
 
 
 ## TODO 

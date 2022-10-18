@@ -20,7 +20,7 @@ const Home: NextPage<Props> = ({ source }) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const source = readFileSync(join(process.cwd(), '/pages/content.mdx'), 'utf8');
+  const source = readFileSync(join(process.cwd(), '/mdx/content.mdx'), 'utf8');
 
   const { compiledSource } = await serialize(source, {
     mdxOptions: { remarkPlugins: [remarkSandpack], format: 'mdx' },
