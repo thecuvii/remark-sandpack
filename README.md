@@ -117,6 +117,7 @@ TODO
 
 - ✅ next.js with @next/mdx. 👉🏻[example](examples/next-mdx)
 - ✅ next.js with next-remote-mdx. 👉🏻[example](examples/next-mdx-remote)
+- ✅ gatsby.js . 👉🏻[example](examples/gatsby)
 - ❎ docusaurus
 
 
