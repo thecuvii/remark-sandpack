@@ -1,0 +1,35 @@
+{
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "my-gatsby-site",
+  "author": "Xwil",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@codesandbox/sandpack-react": "^1.14.2",
+    "@mdx-js/react": "^2.1.5",
+    "gatsby": "^4.24.4",
+    "gatsby-plugin-mdx": "^4.3.0",
+    "gatsby-source-filesystem": "^4.24.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "remark-sandpack": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.45",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "gatsby-plugin-pnpm": "^1.2.10",
+    "typescript": "^4.8.3"
+  }
+}
