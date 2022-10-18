@@ -17,6 +17,8 @@ Maybe different for each MDX plugin you use, check out [examples](#Compatible) b
 
 ````md
 
+## 👍Sandpack is awesome.
+
 import { Sandpack } from '@codesandbox/sandpack-react';
 
 
@@ -42,6 +44,10 @@ h1{
 // I'm  readonly
 ```
 </Sandpack>
+
+👍Sandpack is awesome.
+👍Sandpack is awesome.
+👍Sandpack is awesome.
 
 ````
 
@@ -118,6 +124,30 @@ Code above will transform into:
 
 ❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus](https://github.com/pomber/docusaurus-mdx-2)
 
+
+## Advance Useage
+
+### Custom Sandpack component
+
+`remark-sandpack` will parse `<Sandpack></Sandpack>` jsx statement in your MDX files. If your custom sandpack component use different name, such as `SandpackEnhanced`:
+
+```js
+// in your mdx config
+remarkPlugins: [[remarkSandpack, { componentName: 'SandpackEnhanced' }]],
+```
+
+```mdx
+// in your MDX file
+
+import SandpackEnhanced from 'your-component-path'
+
+<SandpackEnhanced>
+// code blocks
+</SandpackEnhanced>
+
+```
+
+> Make sure your custom sandpack component receive `files` prop.
 
 ## TODO 
 
