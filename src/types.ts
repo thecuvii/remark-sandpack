@@ -31,4 +31,5 @@ export interface CodeNodeElement extends JsxNodeElement {
 export interface CodeNodeMeta extends Omit<SandpackFile, 'code'> {
   name?: string;
   file?: string;
+  dir?: string;
 }

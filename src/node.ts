@@ -1,11 +1,13 @@
+import { assert } from 'console';
 import { existsSync, readFileSync } from 'fs';
+import readDirRecursive from 'fs-readdir-recursive';
 import { basename, join } from 'path';
 
-import type { CodeNodeElement, CodeNodeMeta, JsxNodeElement, SandpackFiles, VFile } from './types';
+import type { CodeNodeElement, CodeNodeMeta, JsxNodeElement, SandpackFile, VFile } from './types';
 import { isFilename } from './utils';
 
 export const transformCode = async (jsxNode: JsxNodeElement, file: VFile): Promise<void> => {
-  const files: SandpackFiles = {};
+  const files: Record<string, SandpackFile> = {};
 
   const visit = await import('unist-util-visit').then((module) => module.visit);
 
@@ -13,7 +15,16 @@ export const transformCode = async (jsxNode: JsxNodeElement, file: VFile): Promi
     const meta = resolveCodeMeta(codeNode);
     let code = codeNode.value;
 
-    if (meta.file) {
+    if (meta.dir) {
+      const dir = join(process.cwd(), meta.dir);
+      assert(existsSync(dir));
+      const dirFiles = readDirRecursive(dir);
+      dirFiles.forEach((path) => {
+        // If user already define code block use same path, preserve all properties except code.
+        const file = files[path] || {};
+        files[path] = { ...file, code: readFileSync(join(dir, path), 'utf8') };
+      });
+    } else if (meta.file) {
       const filePath = join(file.cwd, meta.file);
       if (existsSync(filePath)) {
         code = readFileSync(filePath, 'utf8');
@@ -23,8 +34,20 @@ export const transformCode = async (jsxNode: JsxNodeElement, file: VFile): Promi
     }
 
     if (meta.name) {
+      let rawCode = '';
+
+      /**
+       * If user import code from dir, and use meta to define file property like below, we should preserve code from dir
+       * ```dir=code/some-dir
+       * ```
+       *
+       * ```src/index.js active
+       * ```
+       */
+      rawCode = files[meta.name].code;
+
       files[meta.name] = {
-        code: code || '',
+        code: code || rawCode || '',
         active: meta.active,
         hidden: meta.hidden,
         readOnly: meta.readOnly,

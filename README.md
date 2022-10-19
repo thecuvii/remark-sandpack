@@ -152,7 +152,3 @@ import SandpackEnhanced from 'your-component-path'
 ```
 
 > Make sure your custom sandpack component receive `files` prop.
-
-## TODO 
-
-- [ ](import folder directly)

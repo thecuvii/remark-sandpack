@@ -65,11 +65,13 @@
   },
   "dependencies": {
     "estree-util-value-to-estree": "^2.0.0",
+    "fs-readdir-recursive": "^1.1.0",
     "unist-util-visit": "^4.1.1"
   },
   "devDependencies": {
     "@antfu/ni": "^0.18.2",
     "@babel/types": "^7.19.4",
+    "@types/fs-readdir-recursive": "^1.1.0",
     "@types/node": "^18.11.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
