@@ -8,5 +8,6 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+  },
+  "eslint.workingDirectories": ["./playground", "./src"]
 }

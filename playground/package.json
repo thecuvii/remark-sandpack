@@ -1,0 +1,29 @@
+{
+  "name": "playground",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@codesandbox/sandpack-react": "^1.14.2",
+    "next": "12.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@mdx-js/loader": "^2.1.4",
+    "@mdx-js/react": "^2.1.5",
+    "@next/mdx": "^12.3.1",
+    "@types/node": "18.11.2",
+    "@types/react": "18.0.21",
+    "@types/react-dom": "18.0.6",
+    "eslint": "^8.25.0",
+    "eslint-config-next": "12.3.1",
+    "remark-sandpack": "workspace:*",
+    "typescript": "4.8.4"
+  }
+}
