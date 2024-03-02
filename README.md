@@ -123,6 +123,7 @@ Code above will transform into:
 - ✅ next.js with next-remote-mdx. 👉🏻[example](examples/next-mdx-remote)
 - ✅ gatsby.js . 👉🏻[example](examples/gatsby)
 - ✅ docusaurus.  👉🏻[example](examples/docusaurus)
+- ✅ astro.  👉🏻[example](examples/astro)
 
 ❗️for docusaurus, you need upgrade mdx to v2, please checkout [docusaurus-mdx-2](https://github.com/pomber/docusaurus-mdx-2)
 

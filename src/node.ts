@@ -44,7 +44,7 @@ export const transformCode = async (jsxNode: JsxNodeElement, file: VFile): Promi
        * ```src/index.js active
        * ```
        */
-      rawCode = files[meta.name].code;
+      rawCode = files[meta.name]?.code;
 
       files[meta.name] = {
         code: code || rawCode || '',
