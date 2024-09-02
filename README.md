@@ -134,22 +134,37 @@ Code above will transform into:
 
 ### Custom Sandpack component
 
-`remark-sandpack` will parse `<Sandpack></Sandpack>` jsx statements in your MDX files. If your custom sandpack component uses a different name, such as `SandpackEnhanced`:
+`remark-sandpack` will parse `<Sandpack></Sandpack>` jsx statements in your MDX files. If your custom sandpack component uses a different name, such as `SandpackEnhanced`. For instance:
 
 ```js
 // in your mdx config
 remarkPlugins: [[remarkSandpack, { componentName: 'SandpackEnhanced' }]],
 ```
 
+Additionally, you can pass an array of component names if you want to support multiple components. For instance:
+
+```
+// in your mdx config
+remarkPlugins: [[remarkSandpack, { componentName: ['SandpackEnhanced', 'AnotherSandpackComponent'] }]],
+```
+
+This configuration allows you to use either `SandpackEnhanced` or `AnotherSandpackComponent` in your MDX files.
+
 ```mdx
 // in your MDX file
 
 import SandpackEnhanced from 'your-component-path'
+import AnotherSandpackComponent from 'another-component-path'
 
 <SandpackEnhanced>
-// code blocks
+// code blocks for SandpackEnhanced
 </SandpackEnhanced>
 
+<AnotherSandpackComponent>
+// code blocks for AnotherSandpackComponent
+</AnotherSandpackComponent>
+
 ```
+By passing an array, you can utilize multiple custom sandpack components within your MDX files.
 
 > Make sure your custom sandpack component receive `files` prop.
