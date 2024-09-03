@@ -36,7 +36,7 @@
     "dev": "tsup --watch",
     "lint": "eslint --ext .js,.ts,.tsx .",
     "prepare": "husky install",
-    "prepublishOnly": "nr build",
+    "prepublishOnly": "pnpm build",
     "release": "bumpp --commit --push --tag && pnpm publish",
     "start": "tsx src/index.ts",
     "test": "vitest",
