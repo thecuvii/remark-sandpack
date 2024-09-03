@@ -19,9 +19,7 @@ export const transform = (options?: Options) => {
     ? options?.componentName
     : [options?.componentName || 'Sandpack'];
   return async (tree: Tree, file: VFile): Promise<void> => {
-    const visit = await import('unist-util-visit').then(
-      (module) => module.visit
-    );
+    const visit = await import('unist-util-visit').then((module) => module.visit);
     const promises: Array<() => Promise<void>> = [];
 
     visit(tree, 'mdxJsxFlowElement', (jsxNode: JsxNodeElement) => {
@@ -33,4 +31,3 @@ export const transform = (options?: Options) => {
     await Promise.all(promises.map((p) => p()));
   };
 };
-
