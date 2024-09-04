@@ -143,7 +143,7 @@ remarkPlugins: [[remarkSandpack, { componentName: 'SandpackEnhanced' }]],
 
 Additionally, you can pass an array of component names if you want to support multiple components. For instance:
 
-```
+```js
 // in your mdx config
 remarkPlugins: [[remarkSandpack, { componentName: ['SandpackEnhanced', 'AnotherSandpackComponent'] }]],
 ```
