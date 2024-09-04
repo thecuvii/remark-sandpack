@@ -4,7 +4,7 @@ const { remarkSandpack } = require('remark-sandpack');
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkSandpack],
+    remarkPlugins: [[remarkSandpack, { componentName: ['Sandpack', 'CustomSandpack'] }]],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
