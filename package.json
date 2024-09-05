@@ -77,7 +77,6 @@
     "tsup": "^8.2.4",
     "tsx": "^3.10.1",
     "typescript": "^5.5.4",
-    "unbuild": "^0.9.4",
     "vitest": "^0.24.3"
   },
   "packageManager": "pnpm@9.9.0"
