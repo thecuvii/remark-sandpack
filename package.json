@@ -1,6 +1,6 @@
 {
   "name": "remark-sandpack",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Use sandpack in MDX",
   "keywords": [
     "remark",
